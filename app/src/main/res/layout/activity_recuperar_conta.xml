@@ -21,12 +21,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include4">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:padding="24dp">
+
+            <ImageView
+                android:layout_width="330dp"
+                android:layout_height="232dp"
+                android:src="@drawable/ic_final_final" />
+
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,6 +43,12 @@
                 android:text="Digite seu e-mail para receber um link para redefinição de senha."
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/black"
+                android:text="Email"/>
 
             <EditText
                 android:id="@+id/edit_email"
