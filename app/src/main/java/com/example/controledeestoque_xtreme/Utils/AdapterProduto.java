@@ -1,4 +1,4 @@
-package com.example.controledeestoque_xtreme;
+package com.example.controledeestoque_xtreme.Utils;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.controledeestoque_xtreme.Endidades.Produto;
+import com.example.controledeestoque_xtreme.R;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.controledeestoque_xtreme;
+package com.example.controledeestoque_xtreme.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.controledeestoque_xtreme.R;
+
 public class FormProdutoctivity extends AppCompatActivity {
 
     private EditText edit_produto;
     private EditText edit_quantidade;
     private EditText edit_valor;
+    private EditText edit_valor_custo;
 
 
     @Override
@@ -25,6 +28,7 @@ public class FormProdutoctivity extends AppCompatActivity {
         String nome = edit_produto.getText().toString();
         String quantidade = edit_quantidade.getText().toString();
         String valor = edit_valor.getText().toString();
+        String Valor_custo = edit_valor_custo.getText().toString();
 
         if (!nome.isEmpty()) {
             if (!quantidade.isEmpty()) {

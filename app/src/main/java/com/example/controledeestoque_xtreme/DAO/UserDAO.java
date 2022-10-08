@@ -12,11 +12,9 @@ import java.util.List;
 @Dao
 public interface UserDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insert (User user);
+    public long insert (User user);
 
 @Query("select * from user WHERE email=:email AND senha=:senha")
-    public List <User> getUser(String email, String senha);
-
-
+ List <User> getUser(String email, String senha);
 
 }

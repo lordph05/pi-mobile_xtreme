@@ -78,7 +78,7 @@ capturarDados();
         // salvar no banco de dados
         bd = Room.databaseBuilder(getApplicationContext(),BancoDeDados.class,"BancoApp").allowMainThreadQueries().build();
         // cria uma instancia do DAO
-        UserDAO userDAO = bd.userDAO();
+        UserDAO userDAO = bd.getuserDAO();
 
         // insere novo usario no banco e mostra na tela
         User user = new User();

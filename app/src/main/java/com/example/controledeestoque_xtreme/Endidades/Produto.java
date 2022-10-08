@@ -1,9 +1,20 @@
-package com.example.controledeestoque_xtreme;
+package com.example.controledeestoque_xtreme.Endidades;
 
 public class Produto {
     private String nome;
     private int estoque;
     private Double valor;
+
+    public Double getValor_estoque() {
+        return valor_estoque;
+    }
+
+    public void setValor_estoque(Double valor_estoque) {
+        this.valor_estoque = valor_estoque;
+    }
+
+    private Double valor_estoque;
+
 
     public String getNome() {
         return nome;

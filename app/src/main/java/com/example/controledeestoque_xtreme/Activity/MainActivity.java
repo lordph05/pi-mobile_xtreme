@@ -1,8 +1,7 @@
-package com.example.controledeestoque_xtreme;
+package com.example.controledeestoque_xtreme.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +9,9 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.controledeestoque_xtreme.Utils.AdapterProduto;
+import com.example.controledeestoque_xtreme.Endidades.Produto;
+import com.example.controledeestoque_xtreme.R;
 import com.tsuryo.swipeablerv.SwipeLeftRightCallback;
 import com.tsuryo.swipeablerv.SwipeableRecyclerView;
 
@@ -39,7 +41,7 @@ private AdapterProduto adapterProduto;
 
     private void ouvinteCliques (){ // metodos de cliques da toolbar
         ibAdd.setOnClickListener(view -> {
-            startActivity(new Intent(this,FormProdutoctivity.class));
+            startActivity(new Intent(this, FormProdutoctivity.class));
         });
         ibVerMais.setOnClickListener(view -> {
             PopupMenu popupMenu = new PopupMenu(this, ibVerMais);

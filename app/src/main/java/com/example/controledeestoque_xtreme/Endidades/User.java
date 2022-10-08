@@ -16,6 +16,6 @@ public class User {
     @ColumnInfo (name = "email")
     public String email;
 
-    @ColumnInfo (name = "senha")
+    @ColumnInfo(name = "senha")
     public String senha;
 }

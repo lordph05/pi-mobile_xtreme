@@ -29,10 +29,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FormProdutoctivity"
+            android:name=".Activity.FormProdutoctivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
