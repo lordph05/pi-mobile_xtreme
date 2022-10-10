@@ -114,13 +114,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Recuperar conta"
+                    android:text="recuperar conta"
                     android:textAlignment="textEnd"
                     android:textColor="@android:color/black"
                     tools:layout_editor_absoluteX="-6dp"
                     tools:layout_editor_absoluteY="181dp" />
 
             </LinearLayout>
+
+
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -137,7 +139,7 @@
                 android:layout_marginTop="16dp"
                 android:autoLink="web"
                 android:padding="16dp"
-                android:text="Site: https://xtremmeinformatica.com.br/"
+                android:text="Site: https://www.xtremmeinformatica.com.br"
                 android:textColor="@android:color/black" />
 
 

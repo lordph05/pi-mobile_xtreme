@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.controledeestoque_xtreme.Activity.InforProdutoActivity;
 import com.example.controledeestoque_xtreme.DAO.UserDAO;
 import com.example.controledeestoque_xtreme.Endidades.User;
 import com.example.controledeestoque_xtreme.R;
@@ -24,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     EditText edit_email, edit_senha;
     Button btn_login;
     TextView text_criar_conta, text_recuperar_conta;
+    ProgressBar progressBar;
     BancoDeDados bd;
 
     @Override
@@ -33,10 +36,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         // captura os componente
         edit_email = findViewById(R.id.edit_email);
-        edit_email = findViewById(R.id.edit_email);
+        edit_senha = findViewById(R.id.edit_senha);
         btn_login = findViewById(R.id.btn_login);
         text_criar_conta = findViewById(R.id.text_criar_conta);
         text_recuperar_conta = findViewById(R.id.text_recuperar_conta);
+        progressBar = findViewById(R.id.progressBar);
 
         // eventos de Cliques
         text_criar_conta.setOnClickListener(this);
@@ -55,8 +59,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
         } else if (origem.getId() == R.id.btn_login) {
             // capturar email e senha
-            String email = findViewById(R.id.edit_email).toString();
-            String senha = findViewById(R.id.edit_senha).toString();
+            String email = edit_email.getText().toString();
+            String senha = edit_senha.getText().toString();
             // acesso ao banco
             bd = Room.databaseBuilder(getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
             //obteando o DAO de user
@@ -65,10 +69,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (user.size() ==0) { // dados incorretos
                 Toast toast = Toast.makeText(LoginActivity.this, "Dados do usuário incorretos!", Toast.LENGTH_SHORT);
                 toast.show();
+                progressBar.setVisibility(View.VISIBLE);
             } else { // dados corretos (permissão concedida)
                 // mudar de tela
-                Toast toast = Toast.makeText(LoginActivity.this, "Permissão concedida!", Toast.LENGTH_SHORT);
-                toast.show();
+                Intent intent = new Intent(LoginActivity.this, InforProdutoActivity.class);
+                startActivity(intent);
 
             }
         }

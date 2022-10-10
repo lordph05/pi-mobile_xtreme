@@ -16,5 +16,4 @@ public interface UserDAO {
 
 @Query("select * from user WHERE email=:email AND senha=:senha")
  List <User> getUser(String email, String senha);
-
 }

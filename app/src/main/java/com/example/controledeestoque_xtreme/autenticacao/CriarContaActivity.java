@@ -49,8 +49,8 @@ public class CriarContaActivity extends AppCompatActivity implements View.OnClic
             edit_email.setError("* Digite seu e-mail");
             edit_email.requestFocus();
             return false;
-        } else if (edit_senha.getText().length() == 0) {
 
+        } else if (edit_senha.getText().length() == 0) {
             edit_senha.setError("* Digite sua senha");
             edit_senha.requestFocus();
             return false;
@@ -66,7 +66,7 @@ public class CriarContaActivity extends AppCompatActivity implements View.OnClic
             }else {
                 Toast.makeText(this, "Erro de validação", Toast.LENGTH_SHORT).show();
             }
-capturarDados();
+            capturarDados();
         }
 
     }
@@ -74,6 +74,7 @@ capturarDados();
         String nome = edit_nome.getText().toString();
         String email = edit_email.getText().toString();
         String senha = edit_senha.getText().toString();
+
 
         // salvar no banco de dados
         bd = Room.databaseBuilder(getApplicationContext(),BancoDeDados.class,"BancoApp").allowMainThreadQueries().build();
