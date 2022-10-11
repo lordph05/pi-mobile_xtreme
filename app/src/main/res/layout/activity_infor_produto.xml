@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Activity.InforProdutoActivity">
 
 
@@ -48,12 +49,23 @@
             android:textStyle="italic"
             android:layout_gravity="center" />
 
+        <android.widget.Button
+            android:id="@+id/btn_cad_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit"
+            android:text="CADASTRAR USUÁRIOS"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@android:color/black"/>
+
 
         <android.widget.Button
             android:id="@+id/btn_hardware"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_btn"
+            android:background="@drawable/bg_edit"
             android:text="HARDWARE"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
@@ -67,7 +79,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/bg_btn"
+            android:background="@drawable/bg_edit"
             android:text="Periféricos"
             android:textColor="@android:color/black"
             app:backgroundTint="@android:color/white"

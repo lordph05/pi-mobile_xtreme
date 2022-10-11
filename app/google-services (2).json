@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "669569360804",
+    "project_id": "estoque-xtreme",
+    "storage_bucket": "estoque-xtreme.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669569360804:android:466c0871cdf954504f9731",
+        "android_client_info": {
+          "package_name": "com.example.controledeestoque_xtreme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669569360804-htstknh5dvf251bb9qaol53ugpfaaiv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXm2cNCo_-iAnJofzXwwQW-O403_ymXOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669569360804-htstknh5dvf251bb9qaol53ugpfaaiv0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

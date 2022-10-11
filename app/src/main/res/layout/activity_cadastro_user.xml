@@ -4,27 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".Activity.MainActivity">
+    tools:context=".autenticacao.Cadastro_UserActivity">
 
     <include
-        android:id="@+id/include"
-        layout="@layout/toolbar"
+        android:id="@+id/include6"
+        layout="@layout/toolbar_voltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.tsuryo.swipeablerv.SwipeableRecyclerView
-        android:id="@+id/rvProdutos"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include"
-        app:leftBgColor="@color/color_edit"
-        app:leftImage="@drawable/ic_remove"
-        app:leftText="Excluir"
-        app:textColor="@color/white"
-        tools:listitem="@layout/item_produto" />
+        app:layout_constraintTop_toBottomOf="@+id/include6"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="Pensando no que fazer."
+            android:textSize="20sp" />
+
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private SwipeableRecyclerView rvProdutos;
 
-    private ImageButton ibAdd, ibVerMais;
+    private ImageButton ibAdd, ibVerMais,ib_voltar_inicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         ibAdd = findViewById(R.id.ib_add);
         ibVerMais = findViewById(R.id.ib_ver_mais);
+        ib_voltar_inicio = findViewById(R.id.ib_voltar_inicio);
         rvProdutos = findViewById(R.id.rvProdutos);
+
 
         configRecyclerView ();
         ouvinteCliques ();
@@ -39,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     private void ouvinteCliques (){ // metodos de cliques da toolbar
         ibAdd.setOnClickListener(view -> {
             startActivity(new Intent(this, FormProdutoctivity.class));
+        });
+        ib_voltar_inicio.setOnClickListener(View -> {
+        startActivity(new Intent(this, InforProdutoActivity.class));
         });
         ibVerMais.setOnClickListener(view -> {
             PopupMenu popupMenu = new PopupMenu(this, ibVerMais);
