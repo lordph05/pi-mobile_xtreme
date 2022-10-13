@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,7 @@ import com.example.controledeestoque_xtreme.DAO.UserDAO;
 import com.example.controledeestoque_xtreme.Endidades.User;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -27,6 +29,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button btn_login;
     TextView text_criar_conta, text_recuperar_conta;
     ProgressBar progressBar;
+    String [] mensagens = {"preencha todos os campos", "outra mensagem"};
     BancoDeDados bd;
 
     @Override
@@ -46,11 +49,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         text_criar_conta.setOnClickListener(this);
         text_recuperar_conta.setOnClickListener(this);
         btn_login.setOnClickListener(this);
+
     }
+
 
     // Métodos interface OnclickListener
     @Override
     public void onClick(View origem) {
+
         if (origem.getId() == R.id.text_criar_conta) {
             Intent intent = new Intent(LoginActivity.this, CriarContaActivity.class);
             startActivity(intent);
@@ -61,6 +67,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             // capturar email e senha
             String email = edit_email.getText().toString();
             String senha = edit_senha.getText().toString();
+            if (email.isEmpty() || senha.isEmpty()){
+                Snackbar snackbar = Snackbar.make(origem, mensagens[0],Snackbar.LENGTH_LONG);
+                snackbar.setBackgroundTint(Color.WHITE);
+                snackbar.setTextColor(Color.RED);
+                snackbar.show();
+            }
             // acesso ao banco
             bd = Room.databaseBuilder(getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
             //obteando o DAO de user
@@ -74,6 +86,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 // mudar de tela
                 Intent intent = new Intent(LoginActivity.this, InforProdutoActivity.class);
                 startActivity(intent);
+                progressBar.setVisibility(View.GONE);
+
 
             }
         }

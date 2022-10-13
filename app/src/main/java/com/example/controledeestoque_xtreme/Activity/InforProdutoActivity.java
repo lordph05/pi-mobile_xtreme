@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.autenticacao.Cadastro_UserActivity;
 import com.example.controledeestoque_xtreme.autenticacao.LoginActivity;
+import com.example.controledeestoque_xtreme.autenticacao.LoginInicioActivity;
 
 public class InforProdutoActivity extends AppCompatActivity {
 
@@ -39,7 +40,7 @@ public class InforProdutoActivity extends AppCompatActivity {
     private void configClique() { // eventos de cliques fora da origem.
         btn_hardware.setOnClickListener(view -> startActivity(new Intent(this, MainActivity.class)));
         btn_cad_user.setOnClickListener(view -> startActivity(new Intent(this, Cadastro_UserActivity.class)));
-        findViewById(R.id.ib_voltar).setOnClickListener(view -> startActivity(new Intent(this, LoginActivity.class)));
+        findViewById(R.id.ib_voltar).setOnClickListener(view -> startActivity(new Intent(this, LoginInicioActivity.class)));
 //        btn_perifericos.setOnClickListener(view -> startActivity(new Intent(this, MainPerifericosActivity.class)));
 //        btn_redes_conectividade.setOnClickListener(view -> startActivity(new Intent(this,Redes_ConectividadeActivity.class)));
 

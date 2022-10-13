@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="criar conta"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="181dp" />
 
@@ -117,7 +117,7 @@
                     android:layout_weight="1"
                     android:text="recuperar conta"
                     android:textAlignment="textEnd"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     tools:layout_editor_absoluteX="-6dp"
                     tools:layout_editor_absoluteY="181dp" />
 
@@ -130,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:indeterminateTint="#4176FA"
+                android:indeterminateTint="#FFFFFF"
                 android:visibility="gone"
                 tools:visibility="visible" />
 
@@ -141,7 +141,7 @@
                 android:autoLink="web"
                 android:padding="16dp"
                 android:text="Site: https://www.xtremmeinformatica.com.br"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/white" />
 
 
         </LinearLayout>
