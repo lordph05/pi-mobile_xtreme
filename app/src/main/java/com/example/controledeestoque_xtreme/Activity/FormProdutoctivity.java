@@ -1,6 +1,7 @@
 package com.example.controledeestoque_xtreme.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,8 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
+import com.example.controledeestoque_xtreme.DAO.UserDAO;
+import com.example.controledeestoque_xtreme.Endidades.Produtos;
+import com.example.controledeestoque_xtreme.Endidades.User;
 import com.example.controledeestoque_xtreme.R;
+import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.List;
 
 public class FormProdutoctivity extends AppCompatActivity  implements View.OnClickListener{
 
@@ -20,6 +28,7 @@ public class FormProdutoctivity extends AppCompatActivity  implements View.OnCli
     private EditText edit_valor_custo;
     private Button btn_salvar;
     String [] mensagens = {"preencha todos os campos", "outra mensagem"};
+    BancoDeDados bd;
 
 
     @Override
@@ -62,6 +71,7 @@ public class FormProdutoctivity extends AppCompatActivity  implements View.OnCli
     }
 
     private void salvarProduto (){
+
         Toast.makeText(this, "salvando produto", Toast.LENGTH_SHORT).show();
 
     }

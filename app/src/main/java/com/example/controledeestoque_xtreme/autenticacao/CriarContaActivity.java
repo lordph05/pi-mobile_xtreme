@@ -20,7 +20,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class CriarContaActivity extends AppCompatActivity implements View.OnClickListener {
 
     // atributos
-    private  EditText edit_nome, edit_email,edit_senha;
+    private  EditText edit_nome, edit_email,edit_senha, edit_perfil;
     private  Button btn_cria_conta;
     String [] mensagens = {"preencha todos os campos", "outra mensagem"};
     BancoDeDados bd;
@@ -36,6 +36,7 @@ public class CriarContaActivity extends AppCompatActivity implements View.OnClic
         edit_nome = findViewById(R.id.edit_nome);
         edit_email = findViewById(R.id.edit_email);
         edit_senha = findViewById(R.id.edit_senha);
+        edit_perfil = findViewById(R.id.edit_perfil);
         btn_cria_conta = findViewById(R.id.btn_cria_conta);
 
         //eventos de cliques dos componentes
@@ -66,9 +67,10 @@ public class CriarContaActivity extends AppCompatActivity implements View.OnClic
         String nome = edit_nome.getText().toString();
         String email = edit_email.getText().toString();
         String senha = edit_senha.getText().toString();
+        String perfil = edit_perfil.getText().toString();
 
         if (origem.getId()== R.id.btn_cria_conta){
-            if (nome.isEmpty() || email.isEmpty()|| senha.isEmpty()){
+            if (nome.isEmpty() || email.isEmpty()|| senha.isEmpty() || perfil.isEmpty()){
                 Snackbar snackbar = Snackbar.make(origem, mensagens[0],Snackbar.LENGTH_SHORT);
                 snackbar.setBackgroundTint(Color.WHITE);
                 snackbar.setTextColor(Color.RED);
@@ -84,6 +86,7 @@ public class CriarContaActivity extends AppCompatActivity implements View.OnClic
         String nome = edit_nome.getText().toString();
         String email = edit_email.getText().toString();
         String senha = edit_senha.getText().toString();
+        String perfil = edit_perfil.getText().toString();
 
         // salvar no banco de dados
         bd = Room.databaseBuilder(getApplicationContext(),BancoDeDados.class,"BancoApp").allowMainThreadQueries().build();
@@ -95,13 +98,12 @@ public class CriarContaActivity extends AppCompatActivity implements View.OnClic
         user.nome = nome;
         user.email=email;
         user.senha = senha;
+        user.perfil= perfil;
 
         //insere o novo usuario no banco
         userDAO.insert(user);
         Toast.makeText(this, "Usuario Cadastrado", Toast.LENGTH_SHORT).show();
         finish();
-
-
 
     }
 

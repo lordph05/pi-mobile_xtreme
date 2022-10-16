@@ -16,6 +16,9 @@ public class User {
     @ColumnInfo (name = "email")
     public String email;
 
+    @ColumnInfo (name = "perfil")
+    public String perfil;
+
 
     @ColumnInfo(name = "senha")
     public String senha;

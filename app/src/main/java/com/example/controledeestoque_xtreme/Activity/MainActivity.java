@@ -2,34 +2,34 @@ package com.example.controledeestoque_xtreme.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
-import com.example.controledeestoque_xtreme.DAO.UserDAO;
+import com.example.controledeestoque_xtreme.Adapter.Adapter_Produto;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
 import com.example.controledeestoque_xtreme.R;
-import com.example.controledeestoque_xtreme.Utils.AdapterProduto;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 import com.example.controledeestoque_xtreme.autenticacao.LoginActivity;
 import com.tsuryo.swipeablerv.SwipeLeftRightCallback;
 import com.tsuryo.swipeablerv.SwipeableRecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TextWatcher {
 
     //atributos
     private SwipeableRecyclerView rvProdutos;
-
     private ImageButton ibAdd, ibVerMais,ib_voltar_inicio;
+    private EditText edit_pesquisa;
+    Adapter_Produto adapter_produto;
+
 
     BancoDeDados bd;
 
@@ -38,16 +38,39 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+// captura dos componentes
         ibAdd = findViewById(R.id.ib_add);
         ibVerMais = findViewById(R.id.ib_ver_mais);
         ib_voltar_inicio = findViewById(R.id.ib_voltar_inicio);
+        edit_pesquisa = findViewById(R.id.edit_pesquisa);
+        edit_pesquisa.addTextChangedListener(this);// faz um filtro no buscar
         rvProdutos = findViewById(R.id.rvProdutos);
 
-        configRecyclerView ();
+       configRecyclerView ();
         ouvinteCliques ();
     }
-    AdapterProduto adapterProduto = new AdapterProduto();
+
+   public void beforeTextChanged(CharSequence var1, int var2, int var3, int var4) {
+   }
+
+    public void onTextChanged(CharSequence var1, int var2, int var3, int var4){
+
+       }
+
+    public void afterTextChanged(Editable text){
+        String novoTexto = text.toString ();// captura o que esta no filtro buscar
+        ArrayList <Produtos> listaProdutos = adapter_produto.produtosList;
+        ArrayList<Produtos>dadosFiltrados = new ArrayList<>();
+        /*percorrer a lista original e filtrar os dados pelo buscar*/
+        for (int i=0; i<listaProdutos.size();i++){
+            Produtos produtos = listaProdutos.get(i);
+            if (produtos.nome.contains(novoTexto)){
+                dadosFiltrados.add(produtos);
+            }
+        }
+adapter_produto.mudarDados(dadosFiltrados);
+       }
+
 
     private void ouvinteCliques (){ // metodos de cliques da toolbar
         ibAdd.setOnClickListener(view -> {
@@ -75,8 +98,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void configRecyclerView (){
         rvProdutos.setLayoutManager(new LinearLayoutManager(this));
+        adapter_produto = new Adapter_Produto(this);
+        rvProdutos.setAdapter(adapter_produto);
         rvProdutos.setHasFixedSize(true); // carregar a lista mas rapido.
-        rvProdutos.setAdapter(adapterProduto);
         rvProdutos.setListener(new SwipeLeftRightCallback.Listener() {
             @Override
             public void onSwipedLeft(int position) {
@@ -85,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onSwipedRight(int position) { // removendo os itens da lista
-
-
 
             }
         });

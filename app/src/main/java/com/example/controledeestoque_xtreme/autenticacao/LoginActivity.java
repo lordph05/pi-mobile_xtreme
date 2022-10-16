@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button btn_login;
     TextView text_criar_conta, text_recuperar_conta;
     ProgressBar progressBar;
-    String [] mensagens = {"preencha todos os campos", "outra mensagem"};
+    String [] mensagens = {"Entre com e-mail e senha.", "outra mensagem"};
     BancoDeDados bd;
 
     @Override
@@ -67,6 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             // capturar email e senha
             String email = edit_email.getText().toString();
             String senha = edit_senha.getText().toString();
+
             if (email.isEmpty() || senha.isEmpty()){
                 Snackbar snackbar = Snackbar.make(origem, mensagens[0],Snackbar.LENGTH_LONG);
                 snackbar.setBackgroundTint(Color.WHITE);
@@ -78,6 +79,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //obteando o DAO de user
             UserDAO userDAO = bd.getuserDAO();
             List<User> user = userDAO.getUser(email, senha);
+
+
             if (user.size() ==0) { // dados incorretos
                 Toast toast = Toast.makeText(LoginActivity.this, "Dados do usuário incorretos!", Toast.LENGTH_SHORT);
                 toast.show();
