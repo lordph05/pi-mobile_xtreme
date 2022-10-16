@@ -7,15 +7,19 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
+import com.example.controledeestoque_xtreme.Endidades.User;
 
 import java.util.List;
 
 @Dao
 public interface ProdutoDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insert (Produtos produtos);
+    public void insert(Produtos produtos);
 
-    @Query("select * from produto")
+    @Query("select * from produtos WHERE nome=:nome AND estoque=:estoque")
+    List <Produtos> getProdutos(String nome, String estoque);
+
+    @Query("select * from produtos")
     public List<Produtos>getAll();
 
 

@@ -56,8 +56,8 @@ public class Adapter_Produto extends RecyclerView.Adapter <Adapter_Produto.itemL
 // vincular os dados de cada indice do array do viewHolder
         holder.text_produto.setText(produtosList.get(position).nome);
         holder.text_estoque.setText("EStoque: "+String.valueOf(fonteDados_Recentes.get(position).estoque));
-        holder.text_valor.setText("R$: "+String.valueOf(fonteDados_Recentes.get(position).valor));
-        holder.text_valor_custo.setText("Valor custo: "+String.valueOf(fonteDados_Recentes.get(position).valor_custo));
+        holder.text_valor.setText("Valor de venda R$: "+String.valueOf(fonteDados_Recentes.get(position).valor));
+        holder.text_valor_custo.setText("Valor custo R$: "+String.valueOf(fonteDados_Recentes.get(position).valor_custo));
 
     }
 

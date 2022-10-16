@@ -76,7 +76,7 @@
                 android:textColor="@android:color/black"/>
 
             <EditText
-                android:id="@+id/edit_quantidade"
+                android:id="@+id/edit_estoque"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edit"

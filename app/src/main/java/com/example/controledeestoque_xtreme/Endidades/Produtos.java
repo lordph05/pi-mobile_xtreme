@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
 
-@Entity (tableName = "produto")
+@Entity (tableName = "produtos")
 public class Produtos {
 
     @PrimaryKey (autoGenerate = true)
@@ -19,10 +19,10 @@ public class Produtos {
     public String estoque;
 
     @ColumnInfo(name = "valor")
-    public double valor;
+    public String valor;
 
     @ColumnInfo(name = "valor_custo")
-    public double valor_custo;
+    public String valor_custo;
 
 //    /*gera produtos ficticios*/
 //    public static ArrayList<Produtos> produtosficticios(int n){
