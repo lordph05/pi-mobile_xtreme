@@ -1,4 +1,4 @@
-package com.example.controledeestoque_xtreme.Adapter;
+package com.example.controledeestoque_xtreme.Menu.Cat_hardware;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,21 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
-import com.example.controledeestoque_xtreme.DAO.UserDAO;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
-import com.example.controledeestoque_xtreme.Endidades.User;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Adapter_Produto extends RecyclerView.Adapter <Adapter_Produto.itemLista> {
+public class ListaHardwareAdapter extends RecyclerView.Adapter <ListaHardwareAdapter.itemLista> {
     public ArrayList<Produtos> produtosList, fonteDados_Recentes;
   LayoutInflater inflater;
   BancoDeDados bd;
 
-    public Adapter_Produto (Context context){
+    public ListaHardwareAdapter(Context context){
         bd = Room.databaseBuilder(context.getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
         //obteando o DAO de produto
         ProdutoDAO produtoDAO = bd.getProdutoDAO();
@@ -45,7 +42,7 @@ public class Adapter_Produto extends RecyclerView.Adapter <Adapter_Produto.itemL
     @NonNull
     @Override
     public itemLista onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View hardwareXML = inflater.inflate(R.layout.item_produto,parent,false);
+        View hardwareXML = inflater.inflate(R.layout.lista_hardware_item,parent,false);
         itemLista novaitemLista = new itemLista(hardwareXML);
 
         return novaitemLista;

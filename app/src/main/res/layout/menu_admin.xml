@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Activity.InforProdutoActivity">
+    tools:context=".Menu.MenuAdmin">
 
 
     <include
@@ -17,8 +17,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="158dp"
+        android:layout_height="151dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/logo_inicio1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:text="Escolha a categoria do produto"
             android:textColor="#4176FA"
             android:textSize="20sp"
@@ -54,11 +55,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_edit"
-            android:text="admin"
+            android:text="Admin"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:textColor="@android:color/black"/>
+            android:textColor="#4176FA"/>
 
 
         <android.widget.Button
@@ -97,6 +98,18 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_edit"
             android:text="Redes e conectividade"
+            android:textColor="@android:color/black"
+            app:backgroundTint="@android:color/white" />
+
+        <android.widget.Button
+            android:id="@+id/btn_computadores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_edit"
+            android:text="Computadores"
             android:textColor="@android:color/black"
             app:backgroundTint="@android:color/white" />
 

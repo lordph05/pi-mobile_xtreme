@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Menu.Cat_hardware.ListaHardware">
 
     <include
         android:id="@+id/include"
@@ -52,5 +52,5 @@
         app:leftImage="@drawable/ic_remove"
         app:leftText="Excluir"
         app:textColor="@color/white"
-        tools:listitem="@layout/item_produto" />
+        tools:listitem="@layout/lista_hardware_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,8 +16,8 @@ public interface ProdutoDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public void insert(Produtos produtos);
 
-    @Query("select * from produtos WHERE nome=:nome AND estoque=:estoque")
-    List <Produtos> getProdutos(String nome, String estoque);
+    @Query("select * from produtos")
+    List <Produtos> getProdutos();
 
     @Query("select * from produtos")
     public List<Produtos>getAll();
@@ -25,6 +25,6 @@ public interface ProdutoDAO {
 
 
     @Delete
-    public void remove(Produtos produtos);
+    public  void remove(Produtos produto);
 
 }

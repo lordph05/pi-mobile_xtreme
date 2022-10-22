@@ -1,5 +1,7 @@
 package com.example.controledeestoque_xtreme.DAO;
 
+import android.widget.TextView;
+
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -16,4 +18,9 @@ public interface UserDAO {
 
 @Query("select * from user WHERE email=:email AND senha=:senha")
  List <User> getUser(String email, String senha);
+
+    @Query("select * from user")
+    public List<User>getAll();
+
+
 }

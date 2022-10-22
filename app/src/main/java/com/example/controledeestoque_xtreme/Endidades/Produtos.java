@@ -16,13 +16,13 @@ public class Produtos {
     public String nome;
 
     @ColumnInfo (name = "estoque")
-    public String estoque;
+    public int estoque;
 
     @ColumnInfo(name = "valor")
-    public String valor;
+    public double valor;
 
     @ColumnInfo(name = "valor_custo")
-    public String valor_custo;
+    public double valor_custo;
 
 //    /*gera produtos ficticios*/
 //    public static ArrayList<Produtos> produtosficticios(int n){

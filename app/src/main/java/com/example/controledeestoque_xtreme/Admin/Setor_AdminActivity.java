@@ -30,6 +30,12 @@ public class Setor_AdminActivity extends AppCompatActivity implements View.OnCli
 
     private void IniciarComponentes() {
         text_cadastrar_user = findViewById(R.id.text_cadastrar_user);
+
+
+        findViewById(R.id.ib_voltar).setOnClickListener(view -> finish() );
+
+        TextView text_titulo = findViewById(R.id.text_titulo);
+        text_titulo.setText("Area do administrador");
     }
 
     @Override

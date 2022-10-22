@@ -13,7 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.controledeestoque_xtreme.Activity.InforProdutoActivity;
+import com.example.controledeestoque_xtreme.Menu.Cat_hardware.MenuFuncionario;
+import com.example.controledeestoque_xtreme.Menu.MenuAdmin;
 import com.example.controledeestoque_xtreme.DAO.UserDAO;
 import com.example.controledeestoque_xtreme.Endidades.User;
 import com.example.controledeestoque_xtreme.R;
@@ -27,15 +28,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     //atributos
     EditText edit_email, edit_senha;
     Button btn_login;
-    TextView text_criar_conta, text_recuperar_conta;
+    TextView text_criar_conta, text_recuperar_conta,text_perfil;
     ProgressBar progressBar;
     String [] mensagens = {"Entre com e-mail e senha.", "outra mensagem"};
     BancoDeDados bd;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
 
         // captura os componente
         edit_email = findViewById(R.id.edit_email);
@@ -44,6 +48,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         text_criar_conta = findViewById(R.id.text_criar_conta);
         text_recuperar_conta = findViewById(R.id.text_recuperar_conta);
         progressBar = findViewById(R.id.progressBar);
+
 
         // eventos de Cliques
         text_criar_conta.setOnClickListener(this);
@@ -64,15 +69,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(LoginActivity.this, RecuperarContaActivity.class);
             startActivity(intent);
         } else if (origem.getId() == R.id.btn_login) {
+            progressBar.setVisibility(View.VISIBLE);
+
             // capturar email e senha
             String email = edit_email.getText().toString();
             String senha = edit_senha.getText().toString();
+
 
             if (email.isEmpty() || senha.isEmpty()){
                 Snackbar snackbar = Snackbar.make(origem, mensagens[0],Snackbar.LENGTH_LONG);
                 snackbar.setBackgroundTint(Color.WHITE);
                 snackbar.setTextColor(Color.RED);
                 snackbar.show();
+                progressBar.setVisibility(View.GONE);
+                return;
             }
             // acesso ao banco
             bd = Room.databaseBuilder(getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
@@ -80,19 +90,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             UserDAO userDAO = bd.getuserDAO();
             List<User> user = userDAO.getUser(email, senha);
 
-
             if (user.size() ==0) { // dados incorretos
                 Toast toast = Toast.makeText(LoginActivity.this, "Dados do usuário incorretos!", Toast.LENGTH_SHORT);
-                toast.show();
-                progressBar.setVisibility(View.VISIBLE);
-            } else { // dados corretos (permissão concedida)
-                // mudar de tela
-                Intent intent = new Intent(LoginActivity.this, InforProdutoActivity.class);
-                startActivity(intent);
                 progressBar.setVisibility(View.GONE);
+                toast.show();
 
-
+            } else { // dados corretos (permissão concedida)
+                //verificar se o usuario que acabou de logar é admin.
+                if (user.get(0).perfil.equals("admin")){
+                    Intent intent = new Intent(LoginActivity.this, MenuAdmin.class);
+                    progressBar.setVisibility(View.GONE);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new Intent(LoginActivity.this, MenuFuncionario.class);
+                    progressBar.setVisibility(View.GONE);
+                    startActivity(intent);
+                }
             }
         }
+    }
+    private void Logar (){
+
     }
 }
