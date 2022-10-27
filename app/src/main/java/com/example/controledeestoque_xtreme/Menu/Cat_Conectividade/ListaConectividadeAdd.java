@@ -1,9 +1,4 @@
-package com.example.controledeestoque_xtreme.Menu.Cat_hardware;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
+package com.example.controledeestoque_xtreme.Menu.Cat_Conectividade;
 
 import android.Manifest;
 import android.content.Intent;
@@ -16,13 +11,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
+import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardware;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 import com.google.android.material.snackbar.Snackbar;
 
-public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClickListener{
+public class ListaConectividadeAdd extends AppCompatActivity  implements View.OnClickListener{
 
     private EditText edit_produto;
     private EditText edit_estoque;
@@ -38,10 +39,10 @@ public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lista_hardware_add);
+        setContentView(R.layout.activity_lista_conectividade_add);
 
 
-         IniciarComponentes ();
+        IniciarComponentes ();
         ProcurarImagen ();
         //eventos de cliques dos componentes
         btn_salvar.setOnClickListener(this);
@@ -73,7 +74,7 @@ public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClick
                 snackbar.setTextColor(Color.RED);
                 snackbar.show();
             }else {
-                salvarProduto ();
+                salvarConectividade  ();
                 ProcurarImagen ();
             }
 
@@ -81,7 +82,7 @@ public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClick
 
     }
 
-    private void salvarProduto (){
+    private void salvarConectividade (){
         String nome = edit_produto.getText().toString();
         String estoque = edit_estoque.getText().toString();
         String valor = edit_valor.getText().toString();
@@ -113,15 +114,15 @@ public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClick
                     requestPermissions(permissao,1001);
                 }
                 else{
-            }escolherImagen ();
+                }escolherImagen ();
 
-                }
+            }
         });
     }
     private void escolherImagen (){
-Intent intent= new Intent(Intent.ACTION_PICK);
-intent.setType("image/*");
-startActivityForResult(intent,1000);
+        Intent intent= new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent,1000);
     }
 
     @Override
@@ -146,5 +147,4 @@ startActivityForResult(intent,1000);
         }
     }
 }
-
 

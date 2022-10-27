@@ -1,4 +1,4 @@
-package com.example.controledeestoque_xtreme.Menu;
+package com.example.controledeestoque_xtreme.Menu.Cat_hardware;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,14 +7,17 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 import com.example.controledeestoque_xtreme.Admin.Setor_AdminActivity;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardware;
+import com.example.controledeestoque_xtreme.Menu.Cat_Computador.ListaComputador;
+import com.example.controledeestoque_xtreme.Menu.Cat_Conectividade.ListaConectividade;
+import com.example.controledeestoque_xtreme.Menu.Cat_periferico.ListaPeriferico;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.autenticacao.LoginActivity;
 
 public class MenuAdmin extends AppCompatActivity {
 
-    private Button btn_hardware, btn_perifericos, btn_redes_conectividade,btn_admin;
+    private Button btn_hardware, btn_perifericos, btn_redes_conectividade,btn_admin,btn_sair,btn_computadores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,10 @@ public class MenuAdmin extends AppCompatActivity {
         btn_hardware = findViewById(R.id.btn_hardware);
         btn_perifericos = findViewById(R.id.btn_perifericos);
         btn_redes_conectividade = findViewById(R.id.btn_redes_conectividade);
+        btn_computadores = findViewById(R.id.btn_computadores);
         btn_admin = findViewById(R.id.btn_admin);
+        btn_sair = findViewById(R.id.btn_sair);
+
 
         TextView text_titulo = findViewById(R.id.text_titulo);
         text_titulo.setText("Categoria");
@@ -38,11 +44,13 @@ public class MenuAdmin extends AppCompatActivity {
 
     }
     private void configClique() { // eventos de cliques fora da origem.
-        btn_hardware.setOnClickListener(view -> startActivity(new Intent(this, ListaHardware.class)));
         btn_admin.setOnClickListener(view -> startActivity(new Intent(this, Setor_AdminActivity.class)));
+        btn_hardware.setOnClickListener(view -> startActivity(new Intent(this, ListaHardware.class)));
+      btn_perifericos.setOnClickListener(view -> startActivity(new Intent(this, ListaPeriferico.class)));
+        btn_redes_conectividade.setOnClickListener(view -> startActivity(new Intent(this, ListaConectividade.class)));
+        btn_computadores.setOnClickListener(view -> startActivity(new Intent(this, ListaComputador.class)));
+        btn_sair.setOnClickListener(view -> startActivity(new Intent(this, LoginActivity.class)));
         findViewById(R.id.ib_voltar).setOnClickListener(view -> startActivity(new Intent(this, LoginActivity.class)));
-//        btn_perifericos.setOnClickListener(view -> startActivity(new Intent(this, MainPerifericosActivity.class)));
-//        btn_redes_conectividade.setOnClickListener(view -> startActivity(new Intent(this,Redes_ConectividadeActivity.class)));
 
     }
 }

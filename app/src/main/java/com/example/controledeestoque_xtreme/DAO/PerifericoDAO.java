@@ -6,23 +6,25 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
+import com.example.controledeestoque_xtreme.Endidades.Periferico;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
-import com.example.controledeestoque_xtreme.Endidades.User;
 
 import java.util.List;
 
 @Dao
-public interface ProdutoDAO {
+public interface PerifericoDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insert(Produtos produtos);
+    public void insert(Periferico periferico);
 
-    @Query("select * from produtos")
-    List <Produtos> getProdutos();
+    @Query("select * from periferico")
+    List <Periferico> getPeriferico();
 
-    @Query("select * from produtos")
-    public List<Produtos>getAll();
+    @Query("select * from periferico")
+    public List<Periferico>getAll();
+
+
 
     @Delete
-    public  void remove(Produtos produto);
+    public  void remove(Periferico periferico);
 
 }

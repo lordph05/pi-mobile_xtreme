@@ -17,7 +17,7 @@ import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 import com.google.android.material.snackbar.Snackbar;
 
-public class CriarContaActivity extends AppCompatActivity implements View.OnClickListener {
+public class CriarContaActivity extends AppCompatActivity implements View.OnClickListener  {
 
     // atributos
     private  EditText edit_nome, edit_email,edit_senha, edit_perfil;

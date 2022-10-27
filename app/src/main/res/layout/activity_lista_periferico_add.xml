@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Menu.Cat_hardware.ListaHardwareAdd">
+    tools:context=".Menu.Cat_periferico.ListaPerifericoAdd">
 
     <include
-        android:id="@+id/include3"
         layout="@layout/toolbar_voltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +137,6 @@
                     android:layout_marginTop="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_btn"
-                    android:onClick="salvarProduto"
                     android:text="Salvar/Editar"
                     android:textAllCaps="false"
                     android:textColor="#000000"
@@ -154,5 +152,8 @@
 
 
     </ScrollView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

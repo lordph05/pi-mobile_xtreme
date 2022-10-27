@@ -138,7 +138,6 @@
                     android:layout_marginTop="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_btn"
-                    android:onClick="salvarProduto"
                     android:text="Salvar/Editar"
                     android:textAllCaps="false"
                     android:textColor="#000000"

@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edit"
                 android:hint="perfil "
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:padding="16dp"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,4 +1,4 @@
-package com.example.controledeestoque_xtreme.Menu.Cat_hardware;
+package com.example.controledeestoque_xtreme.Menu.Cat_periferico;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,15 +16,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.controledeestoque_xtreme.DAO.PerifericoDAO;
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
+import com.example.controledeestoque_xtreme.Endidades.Periferico;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
+import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardware;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 import com.google.android.material.snackbar.Snackbar;
 
-public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClickListener{
+public class ListaPerifericoAdd extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText edit_produto;
+    EditText edit_produto;
     private EditText edit_estoque;
     private EditText edit_valor;
     private EditText edit_valor_custo;
@@ -34,19 +37,17 @@ public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClick
     String [] mensagens = {"preencha todos os campos", "outra mensagem"};
     BancoDeDados bd;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lista_hardware_add);
+        setContentView(R.layout.activity_lista_periferico_add);
 
-
-         IniciarComponentes ();
+        IniciarComponentes ();
         ProcurarImagen ();
         //eventos de cliques dos componentes
         btn_salvar.setOnClickListener(this);
-    }
 
+    }
     private void IniciarComponentes (){
         // captura dos componentes
         edit_produto = findViewById(R.id.edit_produto);
@@ -57,7 +58,6 @@ public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClick
         btn_carregarImagen = findViewById(R.id.btn_carregarImagen);
         imagem_produto = findViewById(R.id.imagem_produto);
     }
-
 
     @Override
     public void onClick(View origem) {
@@ -73,15 +73,14 @@ public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClick
                 snackbar.setTextColor(Color.RED);
                 snackbar.show();
             }else {
-                salvarProduto ();
+                salvarPeriferico ();
                 ProcurarImagen ();
             }
 
         }
 
     }
-
-    private void salvarProduto (){
+    private void salvarPeriferico (){
         String nome = edit_produto.getText().toString();
         String estoque = edit_estoque.getText().toString();
         String valor = edit_valor.getText().toString();
@@ -89,19 +88,19 @@ public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClick
 
         bd = Room.databaseBuilder(getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
         //obteando o DAO do produto
-        ProdutoDAO produtoDAO = bd.getProdutoDAO();
+        PerifericoDAO perifericoDAO = bd.getPerifericoDAO();
 //        List<Produtos> produtos = produtoDAO.getProdutos();
 
         // insere novo usario no banco e mostra na tela
-        Produtos novoProduto = new Produtos();
+        Periferico novoProduto = new Periferico();
         novoProduto.nome = nome;
         novoProduto.estoque= Integer.parseInt(estoque);
         novoProduto.valor= Double.parseDouble(valor);
         novoProduto.valor_custo=Double.parseDouble(valor_custo);
 
-        produtoDAO.insert(novoProduto);
+        perifericoDAO.insert(novoProduto);
         Toast.makeText(this, "produto Cadastrado", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, ListaHardware.class));
+        startActivity(new Intent(this, ListaPeriferico.class));
         finish();
     }
     public void ProcurarImagen (){
@@ -113,15 +112,15 @@ public class ListaHardwareAdd extends AppCompatActivity  implements View.OnClick
                     requestPermissions(permissao,1001);
                 }
                 else{
-            }escolherImagen ();
+                }escolherImagen ();
 
-                }
+            }
         });
     }
     private void escolherImagen (){
-Intent intent= new Intent(Intent.ACTION_PICK);
-intent.setType("image/*");
-startActivityForResult(intent,1000);
+        Intent intent= new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent,1000);
     }
 
     @Override
@@ -146,5 +145,3 @@ startActivityForResult(intent,1000);
         }
     }
 }
-
-

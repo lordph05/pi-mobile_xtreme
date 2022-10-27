@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="criar conta"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     tools:visibility="visible"
                     android:textColor="@android:color/white"
                     tools:layout_editor_absoluteX="0dp"
