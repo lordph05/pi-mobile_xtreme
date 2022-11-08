@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Menu.Cat_hardware.MenuAdmin">
+    tools:context=".Menu.MenuPrincipal.MenuAdmin">
 
 
     <include
@@ -50,6 +50,17 @@
             android:textStyle="italic"
             android:layout_gravity="center" />
 
+        <android.widget.Button
+            android:id="@+id/btn_add_produto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit"
+            android:text="adicionar produto"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="#4176FA"/>
+
 
 
 
@@ -58,7 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_edit"
-            android:text="HARDWARE"
+            android:text="lista de HARDWARE"
+            android:textStyle="italic"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -72,7 +84,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_edit"
-            android:text="Periféricos"
+            android:text=" lista de Periféricos"
+            android:textStyle="italic"
             android:textColor="@android:color/black"
             app:backgroundTint="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +101,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_edit"
-            android:text="Redes e conectividade"
+            android:text=" lista de Redes e conectividades"
+            android:textStyle="italic"
             android:textColor="@android:color/black"
             app:backgroundTint="@android:color/white" />
 
@@ -100,7 +114,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_edit"
-            android:text="Computadores"
+            android:text=" lista de Computadores"
+            android:textStyle="italic"
             android:textColor="@android:color/black"
             app:backgroundTint="@android:color/white" />
 

@@ -13,13 +13,9 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import com.example.controledeestoque_xtreme.DAO.PerifericoDAO;
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
-import com.example.controledeestoque_xtreme.Endidades.Periferico;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardwareAdapter;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardwareAdd;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.MenuFuncionario;
+import com.example.controledeestoque_xtreme.Menu.MenuPrincipal.MenuFuncionario;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 import com.example.controledeestoque_xtreme.autenticacao.LoginActivity;
@@ -40,9 +36,9 @@ public class ListaPeriferico extends AppCompatActivity implements TextWatcher {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_periferico);
-        // captura dos componentes
 
-        ibAdd = findViewById(R.id.ib_add);
+        // captura dos componentes
+//        ibAdd = findViewById(R.id.ib_add);
         ibVerMais = findViewById(R.id.ib_ver_mais);
         ib_voltar_inicio = findViewById(R.id.ib_voltar_inicio);
         edit_pesquisa = findViewById(R.id.edit_pesquisa);
@@ -62,22 +58,22 @@ public class ListaPeriferico extends AppCompatActivity implements TextWatcher {
 
     public void afterTextChanged(Editable text){
         String novoTexto = text.toString ();// captura o que esta no filtro buscar
-        ArrayList<Periferico> listaProdutos = listaPerifericoAdapter.produtosList;
-        ArrayList<Periferico>dadosFiltrados = new ArrayList<>();
+        ArrayList<Produtos> listaProdutos = listaPerifericoAdapter.perifericosList;
+        ArrayList<Produtos>dadosFiltrados = new ArrayList<>();
         /*percorrer a lista original e filtrar os dados pelo buscar*/
         for (int i=0; i<listaProdutos.size();i++){
-            Periferico periferico = listaProdutos.get(i);
-            if (periferico.nome.contains(novoTexto)){
-                dadosFiltrados.add(periferico);
+            Produtos produto = listaProdutos.get(i);
+            if (produto.nome.contains(novoTexto)){
+                dadosFiltrados.add(produto);
             }
         }
         listaPerifericoAdapter.mudarDados(dadosFiltrados);
     }
     private void ouvinteCliques (){ // metodos de cliques da toolbar
-        ibAdd.setOnClickListener(view -> {
-            startActivity(new Intent(this, ListaPerifericoAdd.class));
-            finish();
-        });
+//        ibAdd.setOnClickListener(view -> {
+//            startActivity(new Intent(this, ListaPerifericoAdd.class));
+//            finish();
+//        });
         ib_voltar_inicio.setOnClickListener(View -> {
             startActivity(new Intent(this, MenuFuncionario.class));
         });
@@ -111,12 +107,12 @@ public class ListaPeriferico extends AppCompatActivity implements TextWatcher {
             @Override
             public void onSwipedRight(int position) { // removendo os itens da lista
                 bd = Room.databaseBuilder(getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
-                Periferico periferico = listaPerifericoAdapter.produtosList.get(position);
-                PerifericoDAO perifericoDAO = bd.getPerifericoDAO();
-                perifericoDAO.remove(periferico);
+                Produtos produto = listaPerifericoAdapter.perifericosList.get(position);
+                ProdutoDAO produtoDAO = bd.getProdutoDAO();
+                produtoDAO.remove(produto);
                 //atualizar tela apos remoção
-                ArrayList<Periferico> listaProdutos = listaPerifericoAdapter.produtosList;
-                listaProdutos.remove(periferico);
+                ArrayList<Produtos> listaProdutos = listaPerifericoAdapter.perifericosList;
+                listaProdutos.remove(produto);
                 listaPerifericoAdapter.mudarDados(listaProdutos);
             }
         });

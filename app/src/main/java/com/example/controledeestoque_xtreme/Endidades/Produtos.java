@@ -24,19 +24,8 @@ public class Produtos {
     @ColumnInfo(name = "valor_custo")
     public double valor_custo;
 
-//    /*gera produtos ficticios*/
-//    public static ArrayList<Produtos> produtosficticios(int n){
-//        ArrayList <Produtos>lista = new ArrayList<>();
-//        for (int i=0; i<n; i++){
-//            Produtos novo = new Produtos();
-//            novo.nome=" nome i" +i;
-//            novo.estoque= +i;
-//            novo.valor= +i;
-//            novo.valor_custo= +i;
-//            lista.add(novo);
-//
-//        }
-//        return lista;
-//    }
+    @ColumnInfo (name = "tipo")
+    public int tipo;
+
 
 }

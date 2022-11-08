@@ -18,7 +18,6 @@ import androidx.room.Room;
 
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardware;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 import com.google.android.material.snackbar.Snackbar;
@@ -43,7 +42,7 @@ public class ListaConectividadeAdd extends AppCompatActivity  implements View.On
 
 
         IniciarComponentes ();
-        ProcurarImagen ();
+//        ProcurarImagen ();
         //eventos de cliques dos componentes
         btn_salvar.setOnClickListener(this);
     }
@@ -90,7 +89,7 @@ public class ListaConectividadeAdd extends AppCompatActivity  implements View.On
 
         bd = Room.databaseBuilder(getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
         //obteando o DAO do produto
-        ProdutoDAO produtoDAO = bd.getProdutoDAO();
+        ProdutoDAO conectividadeDAO = bd.getProdutoDAO();
 //        List<Produtos> produtos = produtoDAO.getProdutos();
 
         // insere novo usario no banco e mostra na tela
@@ -100,9 +99,9 @@ public class ListaConectividadeAdd extends AppCompatActivity  implements View.On
         novoProduto.valor= Double.parseDouble(valor);
         novoProduto.valor_custo=Double.parseDouble(valor_custo);
 
-        produtoDAO.insert(novoProduto);
+        conectividadeDAO.insert(novoProduto);
         Toast.makeText(this, "produto Cadastrado", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, ListaHardware.class));
+        startActivity(new Intent(this, ListaConectividade.class));
         finish();
     }
     public void ProcurarImagen (){

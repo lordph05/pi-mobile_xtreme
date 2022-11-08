@@ -11,31 +11,29 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import com.example.controledeestoque_xtreme.DAO.ConectividadeDAO;
-import com.example.controledeestoque_xtreme.DAO.PerifericoDAO;
-import com.example.controledeestoque_xtreme.Endidades.Conectividade;
-import com.example.controledeestoque_xtreme.Endidades.Periferico;
+import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
+import com.example.controledeestoque_xtreme.Endidades.Produtos;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 
 import java.util.ArrayList;
 
 public class ListaConectividadeAdapter extends RecyclerView.Adapter <ListaConectividadeAdapter.itemLista> {
-    public ArrayList<Conectividade> produtosList, fonteDados_Recentes;
+    public ArrayList<Produtos> conectividadeList, fonteDados_Recentes;
     LayoutInflater inflater;
     BancoDeDados bd;
 
     public ListaConectividadeAdapter(Context context){
         bd = Room.databaseBuilder(context.getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
         //obteando o DAO de produto
-        ConectividadeDAO conectividadeDAO = bd.getConectividadeDAO();
-        produtosList = (ArrayList <Conectividade>) conectividadeDAO.getAll();
-        fonteDados_Recentes = produtosList;
+        ProdutoDAO produtoDAO = bd.getProdutoDAO();
+        conectividadeList = (ArrayList <Produtos>) produtoDAO.getAllConectividade();
+        fonteDados_Recentes = conectividadeList;
         inflater = LayoutInflater.from(context);
     }
 
-    public void mudarDados(ArrayList <Conectividade> novosDados){
-        if (novosDados.isEmpty()) fonteDados_Recentes = produtosList;
+    public void mudarDados(ArrayList <Produtos> novosDados){
+        if (novosDados.isEmpty()) fonteDados_Recentes = conectividadeList;
         fonteDados_Recentes = novosDados;
         notifyDataSetChanged(); // notifica que a as alterações na tela no filtro
     }
@@ -52,7 +50,7 @@ public class ListaConectividadeAdapter extends RecyclerView.Adapter <ListaConect
     @Override
     public void onBindViewHolder(@NonNull itemLista holder, int position) {
 // vincular os dados de cada indice do array do viewHolder
-        holder.text_produto.setText(produtosList.get(position).nome);
+        holder.text_produto.setText(conectividadeList.get(position).nome);
         holder.text_estoque.setText("EStoque: "+String.valueOf(fonteDados_Recentes.get(position).estoque));
         holder.text_valor.setText("Valor de venda R$: "+String.valueOf(fonteDados_Recentes.get(position).valor));
         holder.text_valor_custo.setText("Valor custo R$: "+String.valueOf(fonteDados_Recentes.get(position).valor_custo));

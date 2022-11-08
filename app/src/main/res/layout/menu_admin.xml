@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Menu.Cat_hardware.MenuAdmin">
+    tools:context=".Menu.MenuPrincipal.MenuAdmin">
 
 
     <include
@@ -17,7 +17,7 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="158dp"
+        android:layout_width="278dp"
         android:layout_height="151dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/logo_inicio1"
@@ -32,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
+        android:background="@drawable/background_view_top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +46,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="Escolha a categoria do produto"
-            android:textColor="#4176FA"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="italic"
             android:layout_gravity="center" />
@@ -62,16 +63,28 @@
             android:layout_marginEnd="16dp"
             android:textColor="#4176FA"/>
 
+        <android.widget.Button
+            android:id="@+id/btn_add_produto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit"
+            android:text="adicionar produto"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="#4176FA"/>
+
 
         <android.widget.Button
             android:id="@+id/btn_hardware"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_edit"
-            android:text="HARDWARE"
+            android:text="lista de HARDWARE"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:textStyle="italic"
             android:textColor="@android:color/black"/>
 
         <android.widget.Button
@@ -82,12 +95,13 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_edit"
-            android:text="Periféricos"
+            android:text=" lista de Periféricos"
             android:textColor="@android:color/black"
             app:backgroundTint="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="italic"
             app:layout_constraintTop_toBottomOf="@+id/btn_hardware" />
 
         <android.widget.Button
@@ -98,8 +112,9 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_edit"
-            android:text="Redes e conectividade"
+            android:text=" lista de Redes e conectividades"
             android:textColor="@android:color/black"
+            android:textStyle="italic"
             app:backgroundTint="@android:color/white" />
 
         <android.widget.Button
@@ -110,7 +125,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_edit"
-            android:text="Computadores"
+            android:text=" lista de Computadores"
+            android:textStyle="italic"
             android:textColor="@android:color/black"
             app:backgroundTint="@android:color/white" />
 
@@ -123,7 +139,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_btn"
             android:text="Sair"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/holo_red_dark"
             app:backgroundTint="@android:color/white" />
 
     </LinearLayout>

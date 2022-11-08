@@ -26,9 +26,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-}
-
-
+    }
 
 dependencies {
 
@@ -40,6 +38,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation 'com.github.tsuryo:Swipeable-RecyclerView:1.1'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
     def room_version = "2.4.1"
 
     implementation "androidx.room:room-runtime:$room_version"
@@ -59,6 +60,10 @@ dependencies {
 
     // optional - Paging 3 Integration
     implementation "androidx.room:room-paging:2.4.1"
+
+    implementation "androidx.room:room-runtime:2.2.3"
+    annotationProcessor "androidx.room:room-compiler:2.2.3"
+    implementation 'com.google.code.gson:gson:2.6.2'
 
    
 

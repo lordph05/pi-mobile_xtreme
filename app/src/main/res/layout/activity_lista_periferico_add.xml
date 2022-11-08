@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Menu.Cat_periferico.ListaPerifericoAdd">
+    tools:context=".Menu.Cat_Computador.ListaComputadorAdd">
 
     <include
         layout="@layout/toolbar_voltar"
@@ -24,8 +24,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="150dp"
@@ -38,8 +37,8 @@
 
                 <ImageView
                     android:id="@+id/imagem_produto"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="139dp"
+                    android:layout_height="126dp"
                     android:layout_marginTop="16dp"
                     android:src="@drawable/foto" />
 
@@ -74,9 +73,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="1-Hardware 2-Periferico 3-Conectividade 4-Computodor"
+                android:paddingStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
+
+            <EditText
+                android:id="@+id/edit_tipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit"
+
+                android:hint="Numero do Tipo"
+                android:inputType="number"
+                android:padding="16dp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Estoque"
                 android:paddingStart="10dp"
-                android:paddingTop="16dp"
+                android:paddingTop="8dp"
                 android:textColor="@android:color/black"/>
 
             <EditText
@@ -112,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:text="Valor de custo"
                 android:paddingStart="16dp"
-                android:paddingTop="16dp"
+                android:paddingTop="8dp"
                 android:textColor="@android:color/black"/>
 
             <EditText
@@ -152,8 +170,6 @@
 
 
     </ScrollView>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

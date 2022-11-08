@@ -8,8 +8,44 @@
     tools:context=".Menu.Cat_Computador.ListaComputador">
 
     <include
+        android:id="@+id/include"
         layout="@layout/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_pesquisa"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:hint="Buscar"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+
+
+
+    <com.tsuryo.swipeablerv.SwipeableRecyclerView
+        android:id="@+id/rvComputador"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pesquisa"
+        app:leftBgColor="@color/color_edit"
+        app:leftImage="@drawable/ic_remove"
+        app:leftText="Excluir"
+        app:textColor="@color/white"
+        tools:listitem="@layout/lista_computador_item" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

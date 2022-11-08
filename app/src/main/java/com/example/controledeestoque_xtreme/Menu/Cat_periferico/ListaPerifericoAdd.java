@@ -16,11 +16,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.controledeestoque_xtreme.DAO.PerifericoDAO;
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
-import com.example.controledeestoque_xtreme.Endidades.Periferico;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardware;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 import com.google.android.material.snackbar.Snackbar;
@@ -31,6 +28,7 @@ public class ListaPerifericoAdd extends AppCompatActivity implements View.OnClic
     private EditText edit_estoque;
     private EditText edit_valor;
     private EditText edit_valor_custo;
+    private EditText edit_tipo;
     private Button btn_salvar;
     public ImageView imagem_produto;
     public  Button btn_carregarImagen;
@@ -53,6 +51,7 @@ public class ListaPerifericoAdd extends AppCompatActivity implements View.OnClic
         edit_produto = findViewById(R.id.edit_produto);
         edit_estoque = findViewById(R.id.edit_estoque);
         edit_valor = findViewById(R.id.edit_valor);
+        edit_tipo = findViewById(R.id.edit_tipo);
         edit_valor_custo = findViewById(R.id.edit_valor_custo);
         btn_salvar = findViewById(R.id.btn_salvar);
         btn_carregarImagen = findViewById(R.id.btn_carregarImagen);
@@ -65,6 +64,7 @@ public class ListaPerifericoAdd extends AppCompatActivity implements View.OnClic
         String estoque = edit_estoque.getText().toString();
         String valor = edit_valor.getText().toString();
         String valor_custo = edit_valor_custo.getText().toString();
+        String tipo = edit_tipo.getText().toString();
 
         if (origem.getId()== R.id.btn_salvar){
             if (nome.isEmpty() || estoque.isEmpty()|| valor.isEmpty() || valor_custo.isEmpty()){
@@ -85,20 +85,22 @@ public class ListaPerifericoAdd extends AppCompatActivity implements View.OnClic
         String estoque = edit_estoque.getText().toString();
         String valor = edit_valor.getText().toString();
         String valor_custo = edit_valor_custo.getText().toString();
+        String tipo = edit_tipo.getText().toString();
 
         bd = Room.databaseBuilder(getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
         //obteando o DAO do produto
-        PerifericoDAO perifericoDAO = bd.getPerifericoDAO();
+        ProdutoDAO produtoDAO = bd.getProdutoDAO();
 //        List<Produtos> produtos = produtoDAO.getProdutos();
 
         // insere novo usario no banco e mostra na tela
-        Periferico novoProduto = new Periferico();
+        Produtos novoProduto = new Produtos();
         novoProduto.nome = nome;
+        novoProduto.tipo = Integer.parseInt(tipo);
         novoProduto.estoque= Integer.parseInt(estoque);
         novoProduto.valor= Double.parseDouble(valor);
         novoProduto.valor_custo=Double.parseDouble(valor_custo);
 
-        perifericoDAO.insert(novoProduto);
+        produtoDAO.insert(novoProduto);
         Toast.makeText(this, "produto Cadastrado", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this, ListaPeriferico.class));
         finish();

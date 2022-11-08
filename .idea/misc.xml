@@ -3,26 +3,35 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2035" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/backgroun_admin.xml" value="0.2955" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/background.xml" value="0.18" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/background_view_top.xml" value="0.17" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/bakground_login.xml" value="0.2955" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/bg_btn.xml" value="0.19" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/bg_edit.xml" value="0.19" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/container_components.xml" value="0.1685" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/ic_camera.xml" value="0.1595" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/ic_final_final.xml" value="0.2205" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2035" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/ic_logo.xml" value="0.215" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/ic_logo_inicio_inicio.xml" value="0.19" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/drawable/ic_remove.xml" value="0.19" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_abertura.xml" value="0.221875" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_abertura2.xml" value="0.22239583333333332" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_add_produtoctivity.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_cadastro_user.xml" value="0.25" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_criar_conta.xml" value="0.25" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_excluir_user.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_form_produtoctivity.xml" value="0.27708333333333335" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_infor_produto.xml" value="0.27708333333333335" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_infor_produto_user.xml" value="0.27708333333333335" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_lista_computador.xml" value="0.22552083333333334" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_lista_computador_add.xml" value="0.22552083333333334" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_lista_conectividade.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_lista_conectividade2.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_lista_conectividade_add.xml" value="0.24375" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_lista_hardware_edit.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_lista_periferico.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_lista_periferico2.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_lista_periferico_add.xml" value="0.24375" />
@@ -38,6 +47,8 @@
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/activity_spashn.xml" value="0.221875" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/item_produto.xml" value="0.2760416666666667" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_Periferico_item.xml" value="0.23645833333333333" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_User_item.xml" value="0.24375" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_computador_item.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_conectividade_item.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_hardware.xml" value="0.25" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_hardware_add.xml" value="0.31614583333333335" />
@@ -46,11 +57,14 @@
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_periferico_add.xml" value="0.23645833333333333" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_periferico_item.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_redes_item.xml" value="0.24375" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/lista_user_item.xml" value="0.24375" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/menu_admin.xml" value="0.25" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/menu_user.xml" value="0.31614583333333335" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/toolbar.xml" value="0.2760416666666667" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/layout/toolbar_voltar.xml" value="0.2760416666666667" />
         <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/menu/toolbar.xml" value="0.2760416666666667" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.109" />
+        <entry key="..\:/F.Cairu/5 semestre/Android/PI_mobile_2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.109" />
       </map>
     </option>
   </component>

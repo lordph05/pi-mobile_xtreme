@@ -15,7 +15,7 @@ import com.example.controledeestoque_xtreme.autenticacao.LoginActivity;
 
 public class Setor_AdminActivity extends AppCompatActivity implements View.OnClickListener {
 
-  private Button btn_cadastrar_user;
+  private Button btn_cadastrar_user,btn_excluir_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +25,14 @@ public class Setor_AdminActivity extends AppCompatActivity implements View.OnCli
         IniciarComponentes();
 
         btn_cadastrar_user.setOnClickListener(this);
+        btn_excluir_user.setOnClickListener(this);
 
 
     }
 
     private void IniciarComponentes() {
         btn_cadastrar_user = findViewById(R.id.btn_cadastrar_user);
+        btn_excluir_user = findViewById(R.id.btn_excluir_user);
 
 
         findViewById(R.id.ib_voltar).setOnClickListener(view -> finish() );
@@ -44,6 +46,11 @@ public class Setor_AdminActivity extends AppCompatActivity implements View.OnCli
         if (origem.getId() == R.id.btn_cadastrar_user) {
             Intent intent = new Intent(Setor_AdminActivity.this, CriarContaActivity.class);
             startActivity(intent);
+
+        }else if (origem.getId() == R.id.btn_excluir_user){
+            Intent intent = new Intent(Setor_AdminActivity.this, ExcluirUserActivity.class);
+            startActivity(intent);
+            
         }
     }
 }

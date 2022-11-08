@@ -16,13 +16,22 @@
         android:theme="@style/Theme.ControledeEstoque_Xtreme"
         tools:targetApi="31">
         <activity
+            android:name=".Menu.Cat_hardware.ListaHardwareEdit"
+            android:exported="false" />
+        <activity
+            android:name=".Menu.Cat_Computador.ListaComputadorAdd"
+            android:exported="false" />
+        <activity
+            android:name=".Menu.Cat_Computador.ListaComputador"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.ExcluirUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".Menu.Cat_Conectividade.ListaConectividadeAdd"
             android:exported="false" />
         <activity
             android:name=".Menu.Cat_Conectividade.ListaConectividade"
-            android:exported="false" />
-        <activity
-            android:name=".Menu.Cat_Computador.ListaComputador"
             android:exported="false" />
         <activity
             android:name=".Menu.Cat_periferico.ListaPerifericoAdd"
@@ -40,13 +49,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Menu.Cat_hardware.MenuFuncionario"
+            android:name=".Menu.MenuPrincipal.MenuFuncionario"
             android:exported="false" />
         <activity
             android:name=".Admin.Setor_AdminActivity"
             android:exported="false" />
         <activity
-            android:name=".Menu.Cat_hardware.MenuAdmin"
+            android:name=".Menu.MenuPrincipal.MenuAdmin"
             android:exported="false" />
         <activity
             android:name=".autenticacao.RecuperarContaActivity"

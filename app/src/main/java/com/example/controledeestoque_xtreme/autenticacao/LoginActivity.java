@@ -13,8 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.MenuFuncionario;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.MenuAdmin;
+import com.example.controledeestoque_xtreme.Menu.MenuPrincipal.MenuFuncionario;
+import com.example.controledeestoque_xtreme.Menu.MenuPrincipal.MenuAdmin;
 import com.example.controledeestoque_xtreme.DAO.UserDAO;
 import com.example.controledeestoque_xtreme.Endidades.User;
 import com.example.controledeestoque_xtreme.R;
