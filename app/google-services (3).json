@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "491544568352",
+    "project_id": "controle-de-estoque-xtreme",
+    "storage_bucket": "controle-de-estoque-xtreme.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491544568352:android:901cda8bf77d94c9d01245",
+        "android_client_info": {
+          "package_name": "com.example.controledeestoque_xtreme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491544568352-kp0uq6eecgq922tnc9sf2vh7s2rp6qls.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.controledeestoque_xtreme",
+            "certificate_hash": "dfa8258184ecfd82442873b9bf674e625b1cf3f4"
+          }
+        },
+        {
+          "client_id": "491544568352-2lnf9ubo59binafqkta2euej75os1mtn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZCp2n8ffmA1880QKcZzGedXflCRIYLwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491544568352-2lnf9ubo59binafqkta2euej75os1mtn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
