@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "491544568352",
-    "project_id": "controle-de-estoque-xtreme",
-    "storage_bucket": "controle-de-estoque-xtreme.appspot.com"
+    "project_number": "229185951158",
+    "project_id": "xtreme-controle-de-produtos",
+    "storage_bucket": "xtreme-controle-de-produtos.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:491544568352:android:901cda8bf77d94c9d01245",
+        "mobilesdk_app_id": "1:229185951158:android:f3d5c85c27e1d6e87b5d17",
         "android_client_info": {
           "package_name": "com.example.controledeestoque_xtreme"
         }
       },
       "oauth_client": [
         {
-          "client_id": "491544568352-kp0uq6eecgq922tnc9sf2vh7s2rp6qls.apps.googleusercontent.com",
+          "client_id": "229185951158-uvnle626nbke4ptun6j6gi2eutg603am.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.controledeestoque_xtreme",
-            "certificate_hash": "dfa8258184ecfd82442873b9bf674e625b1cf3f4"
+            "certificate_hash": "c5bcc871a01d7c3b93821bcdbaa539444c3bb9ec"
           }
         },
         {
-          "client_id": "491544568352-2lnf9ubo59binafqkta2euej75os1mtn.apps.googleusercontent.com",
+          "client_id": "229185951158-31jmn72c7q8bs7pm91ds102fmvegpce2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAZCp2n8ffmA1880QKcZzGedXflCRIYLwo"
+          "current_key": "AIzaSyCVFcuUT8SpFIQWH7Rn8LgxYanfVljBcZM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "491544568352-2lnf9ubo59binafqkta2euej75os1mtn.apps.googleusercontent.com",
+              "client_id": "229185951158-31jmn72c7q8bs7pm91ds102fmvegpce2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

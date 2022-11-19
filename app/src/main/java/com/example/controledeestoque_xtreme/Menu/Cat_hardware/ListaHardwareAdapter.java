@@ -1,6 +1,7 @@
 package com.example.controledeestoque_xtreme.Menu.Cat_hardware;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,9 +55,10 @@ public class ListaHardwareAdapter extends RecyclerView.Adapter <ListaHardwareAda
     public void onBindViewHolder(@NonNull itemLista holder, int position) {
 // vincular os dados de cada indice do array do viewHolder
         holder.text_produto.setText(hardwareList.get(position).nome);
-        holder.text_estoque.setText("EStoque: "+String.valueOf(fonteDados_Recentes.get(position).estoque));
-        holder.text_valor.setText("Valor de venda R$: "+String.valueOf(fonteDados_Recentes.get(position).valor));
-        holder.text_valor_custo.setText("Valor custo R$: "+String.valueOf(fonteDados_Recentes.get(position).valor_custo));
+        holder.text_estoque.setText("Estoque: "+String.valueOf(hardwareList.get(position).estoque));
+        holder.text_valor.setText("Valor: "+ String.valueOf( fonteDados_Recentes.get(position).valor));
+        holder.text_valor_custo.setText("VL custo: "+String.valueOf( fonteDados_Recentes.get(position).valor_custo));
+        holder.id = fonteDados_Recentes.get(position).id;
 
     }
 
@@ -74,6 +76,7 @@ public class ListaHardwareAdapter extends RecyclerView.Adapter <ListaHardwareAda
         TextView text_estoque;
         TextView text_valor;
         TextView text_valor_custo;
+        Integer id;
 
         public itemLista(@NonNull View hardwareXML) {
             super(hardwareXML);
@@ -82,13 +85,19 @@ public class ListaHardwareAdapter extends RecyclerView.Adapter <ListaHardwareAda
             text_estoque = hardwareXML.findViewById(R.id.text_estoque);
             text_valor = hardwareXML.findViewById(R.id.text_valor);
             text_valor_custo = hardwareXML.findViewById(R.id.text_valor_custo);
-            text_produto.setOnClickListener(this);
+            img_descricao.setOnClickListener(this);
 
         }
 
         @Override
-        public void onClick(View view) {
-            Toast.makeText(view.getContext(), "Teste", Toast.LENGTH_SHORT).show();
+        public void onClick(View v) {
+            Intent intent = new Intent(v.getContext(),EditarHardware.class);
+            intent.putExtra("produto",itemLista.this.text_produto.getText().toString());
+            intent.putExtra("estoque",itemLista.this.text_estoque.getText().toString());
+            intent.putExtra("valor",itemLista.this.text_valor.getText().toString());
+            intent.putExtra("valor_custo",itemLista.this.text_valor_custo.getText().toString());
+            intent.putExtra("id",id);
+            v.getContext().startActivity(intent);
 
         }
     }

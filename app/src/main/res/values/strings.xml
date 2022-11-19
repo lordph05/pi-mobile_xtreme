@@ -1,11 +1,5 @@
 <resources>
     <string name="app_name">ControledeEstoque_Xtreme</string>
 
-    <string-array name="spinner_Produto">
-        <item> Hardware</item>
-        <item> Perifericos</item>
-        <item> Redes e Conectividade</item>
-        <item> Computador</item>
 
-    </string-array>
 </resources>

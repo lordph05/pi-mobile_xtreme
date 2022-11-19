@@ -16,8 +16,12 @@
         android:theme="@style/Theme.ControledeEstoque_Xtreme"
         tools:targetApi="31">
         <activity
-            android:name=".Menu.Cat_hardware.ListaHardwareEdit"
-            android:exported="false" />
+            android:name=".Menu.Cat_hardware.EditarHardware"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".Menu.Cat_Computador.ListaComputadorAdd"
             android:exported="false" />

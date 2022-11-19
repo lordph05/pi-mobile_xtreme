@@ -39,6 +39,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="5dp"
         android:text="Estoque 45 Un"
+        android:hint="Estoque"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintStart_toEndOf="@+id/img_descricao"

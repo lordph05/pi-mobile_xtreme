@@ -39,6 +39,6 @@ public interface ProdutoDAO {
     public  void remove(Produtos produto);
 
     @Update
-    public void update (Produtos produtos);
+     public void  update (Produtos produtos);
 
 }
