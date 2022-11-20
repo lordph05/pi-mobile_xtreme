@@ -8,6 +8,17 @@ import java.util.ArrayList;
 
 @Entity (tableName = "produtos")
 public class Produtos {
+    public Produtos() {
+    }
+
+    public Produtos(int id, String nome, int estoque, double valor, double valor_custo, int tipo) {
+        this.id = id;
+        this.nome = nome;
+        this.estoque = estoque;
+        this.valor = valor;
+        this.valor_custo = valor_custo;
+        this.tipo = tipo;
+    }
 
     @PrimaryKey (autoGenerate = true)
     public int id;
@@ -26,6 +37,7 @@ public class Produtos {
 
     @ColumnInfo (name = "tipo")
     public int tipo;
+
 
 
 }

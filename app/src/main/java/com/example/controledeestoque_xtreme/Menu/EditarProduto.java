@@ -1,4 +1,4 @@
-package com.example.controledeestoque_xtreme.Menu.Cat_hardware;
+package com.example.controledeestoque_xtreme.Menu;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,7 +27,7 @@ import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 import com.google.android.material.snackbar.Snackbar;
 
-public class EditarHardware extends AppCompatActivity implements View.OnClickListener {
+public class EditarProduto extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edit_produto;
     private EditText edit_estoque;
@@ -90,7 +90,7 @@ public class EditarHardware extends AppCompatActivity implements View.OnClickLis
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = spinner_produto.getSelectedItem().toString();
                 spinner_produto_codigo_selecionado = i + 1;
-                Toast.makeText(EditarHardware.this, "categoria escolhida foi " + item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditarProduto.this, "categoria escolhida foi " + item, Toast.LENGTH_SHORT).show();
 
             }
 

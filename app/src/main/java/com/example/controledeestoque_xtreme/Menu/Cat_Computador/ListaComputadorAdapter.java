@@ -14,8 +14,7 @@ import androidx.room.Room;
 
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
-import com.example.controledeestoque_xtreme.Menu.Cat_Conectividade.ListaConectividadeAdapter;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.EditarHardware;
+import com.example.controledeestoque_xtreme.Menu.EditarProduto;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 
@@ -92,7 +91,7 @@ public class ListaComputadorAdapter extends RecyclerView.Adapter <ListaComputado
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(v.getContext(), EditarHardware.class);
+            Intent intent = new Intent(v.getContext(), EditarProduto.class);
             intent.putExtra("produto", ListaComputadorAdapter.itemLista.this.text_produto.getText().toString());
             intent.putExtra("estoque", ListaComputadorAdapter.itemLista.this.text_estoque.getText().toString());
             intent.putExtra("valor", ListaComputadorAdapter.itemLista.this.text_valor.getText().toString());

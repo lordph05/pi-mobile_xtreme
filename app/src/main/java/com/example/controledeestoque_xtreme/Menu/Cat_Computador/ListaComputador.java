@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
@@ -15,11 +16,13 @@ import android.widget.Toast;
 
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardwareAdapter;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardwareAdd;
+import com.example.controledeestoque_xtreme.Endidades.User;
+import com.example.controledeestoque_xtreme.Menu.AddProduto;
+import com.example.controledeestoque_xtreme.Menu.MenuPrincipal.MenuAdmin;
 import com.example.controledeestoque_xtreme.Menu.MenuPrincipal.MenuFuncionario;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
+import com.example.controledeestoque_xtreme.Utils.SessionData;
 import com.example.controledeestoque_xtreme.autenticacao.LoginActivity;
 import com.tsuryo.swipeablerv.SwipeLeftRightCallback;
 import com.tsuryo.swipeablerv.SwipeableRecyclerView;
@@ -77,8 +80,17 @@ public class ListaComputador extends AppCompatActivity implements TextWatcher {
 //            startActivity(new Intent(this, ListaComputadorAdd.class));
 //            finish();
 //        });
-        ib_voltar_inicio.setOnClickListener(View -> {
-            startActivity(new Intent(this, MenuFuncionario.class));
+        ib_voltar_inicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User userLogado = SessionData.getInstance().getUserLogado();
+                //criar um if para checar o perfil de usuario
+                if (userLogado.perfil.equals("admin")){
+                    startActivity(new Intent(ListaComputador.this, MenuAdmin.class));
+                }else {
+                    startActivity(new Intent(ListaComputador.this, MenuFuncionario.class));
+                }
+            }
         });
         ibVerMais.setOnClickListener(view -> {
             PopupMenu popupMenu = new PopupMenu(this, ibVerMais);

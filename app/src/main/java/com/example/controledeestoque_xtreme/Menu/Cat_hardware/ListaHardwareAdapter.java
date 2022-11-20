@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +14,7 @@ import androidx.room.Room;
 
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
+import com.example.controledeestoque_xtreme.Menu.EditarProduto;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 
@@ -91,7 +91,7 @@ public class ListaHardwareAdapter extends RecyclerView.Adapter <ListaHardwareAda
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(v.getContext(),EditarHardware.class);
+            Intent intent = new Intent(v.getContext(), EditarProduto.class);
             intent.putExtra("produto",itemLista.this.text_produto.getText().toString());
             intent.putExtra("estoque",itemLista.this.text_estoque.getText().toString());
             intent.putExtra("valor",itemLista.this.text_valor.getText().toString());

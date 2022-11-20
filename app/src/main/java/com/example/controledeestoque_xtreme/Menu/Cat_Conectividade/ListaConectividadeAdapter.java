@@ -14,8 +14,7 @@ import androidx.room.Room;
 
 import com.example.controledeestoque_xtreme.DAO.ProdutoDAO;
 import com.example.controledeestoque_xtreme.Endidades.Produtos;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.EditarHardware;
-import com.example.controledeestoque_xtreme.Menu.Cat_hardware.ListaHardwareAdapter;
+import com.example.controledeestoque_xtreme.Menu.EditarProduto;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
 
@@ -90,7 +89,7 @@ public class ListaConectividadeAdapter extends RecyclerView.Adapter <ListaConect
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(v.getContext(), EditarHardware.class);
+            Intent intent = new Intent(v.getContext(), EditarProduto.class);
             intent.putExtra("produto", ListaConectividadeAdapter.itemLista.this.text_produto.getText().toString());
             intent.putExtra("estoque", ListaConectividadeAdapter.itemLista.this.text_estoque.getText().toString());
             intent.putExtra("valor", ListaConectividadeAdapter.itemLista.this.text_valor.getText().toString());

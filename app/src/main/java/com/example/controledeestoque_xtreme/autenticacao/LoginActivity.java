@@ -13,12 +13,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.controledeestoque_xtreme.Endidades.Produtos;
 import com.example.controledeestoque_xtreme.Menu.MenuPrincipal.MenuFuncionario;
 import com.example.controledeestoque_xtreme.Menu.MenuPrincipal.MenuAdmin;
 import com.example.controledeestoque_xtreme.DAO.UserDAO;
 import com.example.controledeestoque_xtreme.Endidades.User;
 import com.example.controledeestoque_xtreme.R;
 import com.example.controledeestoque_xtreme.Utils.BancoDeDados;
+import com.example.controledeestoque_xtreme.Utils.SessionData;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
@@ -39,7 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        RestabelecerDados();// Temporario
 
         // captura os componente
         edit_email = findViewById(R.id.edit_email);
@@ -96,6 +98,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 toast.show();
 
             } else { // dados corretos (permissão concedida)
+                //salva usuario logado no Singleton
+                SessionData.getInstance().setUserLogado(user.get(0));
                 //verificar se o usuario que acabou de logar é admin.
                 if (user.get(0).perfil.equals("admin")){
                     Intent intent = new Intent(LoginActivity.this, MenuAdmin.class);
@@ -109,7 +113,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         }
     }
-    private void Logar (){
-
+    //Funcao Temporaria Para Reseta os dados no BancodeDados
+    private void RestabelecerDados (){
+        //TODO limpa todos os dados do banco
+        bd = Room.databaseBuilder(getApplicationContext(), BancoDeDados.class, "BancoApp").allowMainThreadQueries().build();
+//        bd.clearAllTables();
+        //TODO Inserir Dados de Usuarios e Produtos
+        for (int i=1; i<=5; i++) {
+            bd.getuserDAO().insert(new User(i, "nome"+i, "ph.jesus@gmail.com", "admin", "123"));
+        }
+//        for (int i=1; i<=5; i++) {
+//            bd.getuserDAO().insert(new User(i, "nome"+i, "fabriciosousa@gmail.com", "user", "1234"));
+//        }
+        //Inseção de Hardware
+        for (int i=1; i<=10; i++) {
+            bd.getProdutoDAO().insert(new Produtos(i,"Hardware"+i,10+i,100.0+i,90.0+i,1));
+        }
     }
 }
